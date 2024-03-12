@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labba4", "Labba4\Labba4.csproj", "{A1EB866C-3DED-4B70-9369-960C681F3091}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1EB866C-3DED-4B70-9369-960C681F3091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1EB866C-3DED-4B70-9369-960C681F3091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1EB866C-3DED-4B70-9369-960C681F3091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1EB866C-3DED-4B70-9369-960C681F3091}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9A749FA-E901-4367-B156-55F5825E1204}
+	EndGlobalSection
+EndGlobal
