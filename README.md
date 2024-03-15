@@ -1,4 +1,7 @@
-![1](https://github.com/Mazay24/Diplom/assets/96546414/1220cdb7-8676-4b2d-bf8e-07c3015a2bcb)
+# Сервис для администрирования спорткомплекса
+<p align="center">
+  <img src="https://github.com/Mazay24/Diplom/assets/96546414/1220cdb7-8676-4b2d-bf8e-07c3015a2bcb"/>
+</p>
 
 # Использованные средства
 Visual Studio - интегрированная среда разработки программного обеспечения с использованием языка C#.
