@@ -26,6 +26,9 @@ MySql MSS - использовалась для работы с базой да�
 
 # Используемая литература 
 [Создание приложения Windows Forms на C# в Visual Studio](https://learn.microsoft.com/ru-ru/visualstudio/ide/create-csharp-winform-visual-studio?view=vs-2022)
+
 [Руководство по программированию в Windows Forms](https://metanit.com/sharp/windowsforms/?ysclid=ltsi1l30v1918089692)
+
 [Настройка базы данных MSS](https://translated.turbopages.org/proxy_u/en-ru.ru.bfa11be2-65f41f10-6ec2b47e-74722d776562/https/docs.oracle.com/en/industries/communications/metasolv-solution/6.3.1/install-guide/setting-mss-database1.html)
+
 [SQL запросы быстро](https://habr.com/ru/articles/480838/)
