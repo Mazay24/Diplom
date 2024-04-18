@@ -20,11 +20,6 @@ namespace Diplom
             this.SendToBack();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Profil profil = new Profil(id);
@@ -33,13 +28,13 @@ namespace Diplom
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Coach coach = new Coach(id);
+            Coachs coach = new Coachs(id);
             coach.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Subscription subscription = new Subscription(id);
+            Subscriptions subscription = new Subscriptions(id);
             subscription.ShowDialog();
         }
 
@@ -47,6 +42,12 @@ namespace Diplom
         {
             Training training = new Training(id);
             training.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Record records = new Record(id);
+            records.ShowDialog();
         }
     }
 }

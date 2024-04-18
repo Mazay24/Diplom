@@ -23,17 +23,7 @@ namespace Diplom
             this.id = id;
             InitializeComponent();
             See();
-            uploader.Retrieve(pictureBox1, id);          
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+            uploader.Retrieve(pictureBox1, id);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,16 +37,13 @@ namespace Diplom
                 {
                     pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
                 }
-                
-
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             dataBase.openConnectoin();
-
-            var yesNo = MessageBox.Show("Вы уверены, что хотите изменить данные?","Система!", MessageBoxButtons.YesNo);
+            var yesNo = MessageBox.Show("Вы уверены, что хотите изменить данные?", "Система!", MessageBoxButtons.YesNo);
             if (yesNo == DialogResult.Yes)
             {
 
@@ -76,7 +63,7 @@ namespace Diplom
                 {
                     command.ExecuteNonQuery();
                     dataBase.closeConnectoin();
-                    See(); 
+                    See();
                     uploader.Upload(pictureBox1, id);
                     uploader.Retrieve(pictureBox1, id);
                 }
@@ -85,16 +72,16 @@ namespace Diplom
                     MessageBox.Show("Что-то поломалось!");
                     throw;
                 }
-                
+
                 MessageBox.Show("Изменения успешно сохранены.");
 
-               
+
             }
             else
             {
 
             }
-                        
+
         }
         private void See()
         {
@@ -118,6 +105,7 @@ namespace Diplom
             reader.Close();
             dataBase.closeConnectoin();
         }
+
     }
 }
 

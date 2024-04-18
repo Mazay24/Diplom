@@ -46,7 +46,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(602, 184);
+            button2.Location = new Point(799, 238);
             button2.Name = "button2";
             button2.Size = new Size(138, 39);
             button2.TabIndex = 21;
@@ -56,7 +56,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(589, 341);
+            button1.Location = new Point(774, 459);
             button1.Name = "button1";
             button1.Size = new Size(182, 64);
             button1.TabIndex = 20;
@@ -66,7 +66,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(30, 328);
+            textBox4.Location = new Point(503, 184);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(210, 103);
@@ -74,16 +74,16 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(30, 197);
+            textBox3.Location = new Point(261, 184);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(210, 80);
+            textBox3.Size = new Size(210, 102);
             textBox3.TabIndex = 18;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(71, 305);
+            label4.Location = new Point(550, 161);
             label4.Name = "label4";
             label4.Size = new Size(113, 20);
             label4.TabIndex = 17;
@@ -92,7 +92,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(98, 174);
+            label3.Location = new Point(326, 161);
             label3.Name = "label3";
             label3.Size = new Size(86, 20);
             label3.TabIndex = 16;
@@ -100,14 +100,14 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(30, 117);
+            textBox2.Location = new Point(18, 259);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(210, 27);
             textBox2.TabIndex = 15;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(30, 42);
+            textBox1.Location = new Point(18, 184);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(210, 27);
             textBox1.TabIndex = 14;
@@ -115,7 +115,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(98, 94);
+            label2.Location = new Point(86, 236);
             label2.Name = "label2";
             label2.Size = new Size(73, 20);
             label2.TabIndex = 13;
@@ -124,7 +124,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(121, 19);
+            label1.Location = new Point(104, 161);
             label1.Name = "label1";
             label1.Size = new Size(39, 20);
             label1.TabIndex = 12;
@@ -135,16 +135,16 @@
             pictureBox1.BackColor = SystemColors.GradientActiveCaption;
             pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
             pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new Point(602, 19);
+            pictureBox1.Location = new Point(770, 32);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(137, 159);
+            pictureBox1.Size = new Size(200, 200);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
             // 
             // button3
             // 
-            button3.Location = new Point(589, 261);
+            button3.Location = new Point(562, 459);
             button3.Name = "button3";
             button3.Size = new Size(182, 64);
             button3.TabIndex = 22;
@@ -156,7 +156,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(982, 553);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -169,9 +171,9 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "UpdateCoach";
             Text = "UpdateCoach";
-            Load += UpdateCoach_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

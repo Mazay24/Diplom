@@ -46,19 +46,20 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = SystemColors.GradientActiveCaption;
+            pictureBox1.BackColor = SystemColors.Control;
             pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
             pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new Point(584, 26);
+            pictureBox1.Location = new Point(770, 30);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(137, 159);
+            pictureBox1.Size = new Size(200, 200);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(103, 26);
+            label1.Location = new Point(113, 135);
             label1.Name = "label1";
             label1.Size = new Size(39, 20);
             label1.TabIndex = 1;
@@ -67,7 +68,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(80, 101);
+            label2.Location = new Point(98, 210);
             label2.Name = "label2";
             label2.Size = new Size(73, 20);
             label2.TabIndex = 2;
@@ -75,14 +76,14 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(12, 49);
+            textBox1.Location = new Point(30, 158);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(210, 27);
             textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(12, 124);
+            textBox2.Location = new Point(30, 233);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(210, 27);
             textBox2.TabIndex = 4;
@@ -90,7 +91,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(80, 181);
+            label3.Location = new Point(331, 135);
             label3.Name = "label3";
             label3.Size = new Size(86, 20);
             label3.TabIndex = 5;
@@ -99,7 +100,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(53, 312);
+            label4.Location = new Point(555, 135);
             label4.Name = "label4";
             label4.Size = new Size(113, 20);
             label4.TabIndex = 6;
@@ -107,15 +108,15 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(12, 204);
+            textBox3.Location = new Point(269, 158);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(210, 80);
+            textBox3.Size = new Size(210, 102);
             textBox3.TabIndex = 7;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(12, 335);
+            textBox4.Location = new Point(508, 158);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(210, 103);
@@ -123,7 +124,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(571, 348);
+            button1.Location = new Point(771, 467);
             button1.Name = "button1";
             button1.Size = new Size(182, 64);
             button1.TabIndex = 9;
@@ -133,7 +134,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(584, 191);
+            button2.Location = new Point(795, 232);
             button2.Name = "button2";
             button2.Size = new Size(138, 39);
             button2.TabIndex = 10;
@@ -145,7 +146,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(982, 553);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox4);
@@ -157,8 +160,10 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AddCoach";
             Text = "AddCoach";
+            Load += AddCoach_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

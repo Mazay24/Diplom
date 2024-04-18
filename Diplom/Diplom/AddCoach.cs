@@ -17,56 +17,68 @@ namespace Diplom
     {
         DataBase dataBase = new DataBase();
         int id;
-        
+
         public AddCoach(int id)
         {
             InitializeComponent();
 
             this.id = id;
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string defaultImagePath = "C:\\Users\\nikis\\Documents\\def.png";
-            Image image = pictureBox1.Image ?? Image.FromFile(defaultImagePath);
-            dataBase.openConnectoin();
-
-            var yesNo = MessageBox.Show("Вы уверены, что хотите добавить тренера?", "Система!", MessageBoxButtons.YesNo);
-            if (yesNo == DialogResult.Yes)
+            if (string.IsNullOrWhiteSpace(textBox1.Text) ||
+                string.IsNullOrWhiteSpace(textBox2.Text) ||
+                string.IsNullOrWhiteSpace(textBox3.Text) ||
+                string.IsNullOrWhiteSpace(textBox4.Text))
             {
+                MessageBox.Show("Вы заполнили не все поля!");
+            }
+            else
+            {
+                
+                string defaultImagePath = "C:\\Users\\nikis\\Documents\\def.png";
+                Image image = pictureBox1.Image ?? Image.FromFile(defaultImagePath);
+                dataBase.openConnectoin();
+
+                var yesNo = MessageBox.Show("Вы уверены, что хотите добавить тренера?", "Система!", MessageBoxButtons.YesNo);
+                if (yesNo == DialogResult.Yes)
+                {
 
 
-                string sqlQuery = @"INSERT INTO [Diplom].[dbo].[Coach] ([Id_club], [Фамилия], [Имя], [Фото], [Должность], [Специализация])
+                    string sqlQuery = @"INSERT INTO [Diplom].[dbo].[Coach] ([Id_club], [Фамилия], [Имя], [Фото], [Должность], [Специализация])
                                  VALUES (@Id_club, @Фамилия, @Имя, @Фото, @Должность, @Специализация)";
 
-                SqlCommand command = new SqlCommand(sqlQuery, dataBase.getConnection());
-                command.Parameters.AddWithValue("@Id_club", id);
-                command.Parameters.AddWithValue("@Фамилия", textBox2.Text);
-                command.Parameters.AddWithValue("@Имя", textBox1.Text);
-                command.Parameters.AddWithValue("@Должность", textBox3.Text);
-                command.Parameters.AddWithValue("@Специализация", textBox4.Text);
-                command.Parameters.AddWithValue("@Фото", ImageToByteArray(image));
+                    SqlCommand command = new SqlCommand(sqlQuery, dataBase.getConnection());
+                    command.Parameters.AddWithValue("@Id_club", id);
+                    command.Parameters.AddWithValue("@Фамилия", textBox2.Text);
+                    command.Parameters.AddWithValue("@Имя", textBox1.Text);
+                    command.Parameters.AddWithValue("@Должность", textBox3.Text);
+                    command.Parameters.AddWithValue("@Специализация", textBox4.Text);
+                    command.Parameters.AddWithValue("@Фото", ImageToByteArray(image));
 
 
 
-                try
+                    try
                     {
                         int rowsAffected = command.ExecuteNonQuery();
-                    this.Close();
+                        this.Close();
                         MessageBox.Show("Тренер добавлен");
-                    Coach coach = new Coach(id);
-                    coach.LoadDataFromDatabase(id);
+                        Coachs coach = new Coachs(id);
+                        coach.LoadDataFromDatabase(id);
 
                     }
                     catch (Exception ex)
                     {
-                        
+
                     }
-                dataBase.closeConnectoin();
-                ;
-                
+                    dataBase.closeConnectoin();
+
+                }
             }
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -92,7 +104,11 @@ namespace Diplom
                 return ms.ToArray();
             }
         }
-        
+
+        private void AddCoach_Load(object sender, EventArgs e)
+        {
+
         }
     }
+}
 

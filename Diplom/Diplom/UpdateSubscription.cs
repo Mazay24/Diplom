@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,12 +42,12 @@ namespace Diplom
             textBox2.Text = description;
             textBox3.Text = hold;
             textBox4.Text = date;
-            textBox5.Text = price.ToString();
+            numericUpDown1.Text = price.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE [Diplom].[dbo].[Subscription] SET [Название] = @Название, [Описание] = @Описание, [Заморозка] = @Заморозка, [Срок] = @Срок WHERE [Id_subscription] = @ID";
+            string query = "UPDATE [Diplom].[dbo].[Subscription] SET [Название] = @Название, [Описание] = @Описание, [Заморозка] = @Заморозка, [Срок] = @Срок, [Цена] = @Цена WHERE [Id_subscription] = @ID";
 
 
             using (SqlCommand command = new SqlCommand(query, dataBase.getConnection()))
@@ -56,7 +57,7 @@ namespace Diplom
                 command.Parameters.AddWithValue("@Описание", textBox2.Text);
                 command.Parameters.AddWithValue("@Заморозка", textBox3.Text);
                 command.Parameters.AddWithValue("@Срок", textBox4.Text);
-                command.Parameters.AddWithValue("@Цена", textBox5.Text);
+                command.Parameters.AddWithValue("@Цена", float.Parse(numericUpDown1.Text, CultureInfo.InvariantCulture.NumberFormat));
 
                 try
                 {
@@ -72,7 +73,7 @@ namespace Diplom
                     }
                     dataBase.closeConnectoin();
                     this.Close();
-                    Subscription subscription = new Subscription(id_club);
+                    Subscriptions subscription = new Subscriptions(id_club);
                     subscription.Show();
 
                 }
@@ -86,7 +87,7 @@ namespace Diplom
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var yesNo = MessageBox.Show("Вы уверены, что хотите изменить данные?", "Система!", MessageBoxButtons.YesNo);
+            var yesNo = MessageBox.Show("Вы уверены, что хотите удалить абонемент?", "Система!", MessageBoxButtons.YesNo);
             if (yesNo == DialogResult.Yes)
             {
 
@@ -105,8 +106,8 @@ namespace Diplom
                         // Проверка на успешное удаление строки
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Абонимент успешно удален!");
-                            Subscription subscription = new Subscription(id_club);
+                            MessageBox.Show("Абонемент успешно удален!");
+                            Subscriptions subscription = new Subscriptions(id_club);
                             subscription.Show();
                             this.Close();
 
@@ -121,13 +122,13 @@ namespace Diplom
                         Console.WriteLine($"Ошибка при выполнении запроса: {ex.Message}");
                     }
                 }
-               
+
             }
             else
             {
 
             }
-            
+
         }
     }
 }

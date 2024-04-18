@@ -27,9 +27,9 @@ namespace Diplom
         private void button1_Click(object sender, EventArgs e)
         {
 
-            DateTime date = dateTimePicker1.Value.Date; // Получаем только дату
-            TimeSpan start = dateTimePicker2.Value.TimeOfDay; // Получаем время начала
-            TimeSpan end = dateTimePicker3.Value.TimeOfDay; // Получаем время окончания
+            DateTime date = dateTimePicker1.Value.Date;
+            TimeSpan start = dateTimePicker2.Value.TimeOfDay;
+            TimeSpan end = dateTimePicker3.Value.TimeOfDay;
 
             // Проверка на пересечение временных интервалов с существующими тренировками
             if (CheckForTimeConflict(date, start, end))
@@ -77,6 +77,8 @@ namespace Diplom
                             int rowsAffected = command.ExecuteNonQuery();
                             MessageBox.Show("Тренировка добавлена");
                             this.Close();
+                            Training training = new Training(id_club);
+                            training.ShowDialog();
                         }
                         catch (Exception ex)
                         {
@@ -142,19 +144,8 @@ namespace Diplom
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            // Обработчик события выбора элемента в ComboBox
             string selectedFullName = comboBox1.SelectedItem.ToString(); 
 
             // Разделение строки на имя и фамилию
@@ -167,9 +158,6 @@ namespace Diplom
 
             try
             {
-                // Создание подключения к базе данных
-                
-                    // Открытие подключения
                     dataBase.openConnectoin();
 
                     // Создание команды SQL с параметрами
@@ -184,9 +172,7 @@ namespace Diplom
 
                         // Проверка на наличие результата
 
-                            id_coach = Convert.ToInt32(result);
-
-                        
+                            id_coach = Convert.ToInt32(result);                    
                     }
                 dataBase.closeConnectoin();
                 

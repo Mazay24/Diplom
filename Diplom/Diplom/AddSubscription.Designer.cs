@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSubscription));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -38,13 +39,14 @@
             textBox4 = new TextBox();
             button1 = new Button();
             label5 = new Label();
-            textBox5 = new TextBox();
+            numericUpDown1 = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(79, 27);
+            label1.Location = new Point(160, 171);
             label1.Name = "label1";
             label1.Size = new Size(77, 20);
             label1.TabIndex = 0;
@@ -53,7 +55,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(381, 27);
+            label2.Location = new Point(710, 170);
             label2.Name = "label2";
             label2.Size = new Size(79, 20);
             label2.TabIndex = 1;
@@ -62,7 +64,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(79, 161);
+            label3.Location = new Point(144, 266);
             label3.Name = "label3";
             label3.Size = new Size(110, 20);
             label3.TabIndex = 2;
@@ -71,7 +73,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(381, 161);
+            label4.Location = new Point(383, 266);
             label4.Name = "label4";
             label4.Size = new Size(85, 20);
             label4.TabIndex = 3;
@@ -79,7 +81,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(24, 50);
+            textBox1.Location = new Point(105, 194);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(194, 53);
@@ -87,15 +89,15 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(290, 50);
+            textBox2.Location = new Point(590, 193);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(252, 93);
+            textBox2.Size = new Size(329, 148);
             textBox2.TabIndex = 5;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(24, 184);
+            textBox3.Location = new Point(105, 288);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(194, 53);
@@ -103,7 +105,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(323, 184);
+            textBox4.Location = new Point(327, 288);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(194, 53);
@@ -111,7 +113,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(642, 389);
+            button1.Location = new Point(824, 492);
             button1.Name = "button1";
             button1.Size = new Size(146, 49);
             button1.TabIndex = 8;
@@ -122,26 +124,27 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(642, 27);
+            label5.Location = new Point(403, 171);
             label5.Name = "label5";
             label5.Size = new Size(45, 20);
             label5.TabIndex = 9;
             label5.Text = "Цена";
             // 
-            // textBox5
+            // numericUpDown1
             // 
-            textBox5.Location = new Point(566, 50);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(194, 53);
-            textBox5.TabIndex = 10;
+            numericUpDown1.Location = new Point(327, 195);
+            numericUpDown1.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(194, 27);
+            numericUpDown1.TabIndex = 10;
             // 
             // AddSubscription
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(textBox5);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(982, 553);
+            Controls.Add(numericUpDown1);
             Controls.Add(label5);
             Controls.Add(button1);
             Controls.Add(textBox4);
@@ -152,8 +155,10 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AddSubscription";
             Text = "AddSubscription";
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -170,6 +175,6 @@
         private TextBox textBox4;
         private Button button1;
         private Label label5;
-        private TextBox textBox5;
+        private NumericUpDown numericUpDown1;
     }
 }

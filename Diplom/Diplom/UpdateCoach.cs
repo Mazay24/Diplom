@@ -56,7 +56,7 @@ namespace Diplom
                     int rowsAffected = command.ExecuteNonQuery();
                     Console.WriteLine("Удалено записей: " + rowsAffected);
                     this.Close();
-                    Coach coach = new Coach(id_club);
+                    Coachs coach = new Coachs(id_club);
                     coach.ShowDialog();
                 }
                 catch (Exception ex)
@@ -108,7 +108,7 @@ namespace Diplom
 
                 MessageBox.Show("Изменения успешно сохранены.");
                 this.Close();
-                Coach coach = new Coach(id_club);
+                Coachs coach = new Coachs(id_club);
                 coach.ShowDialog();
 
             }
@@ -204,11 +204,6 @@ namespace Diplom
                 }
 
             }
-        }
-
-        private void UpdateCoach_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
