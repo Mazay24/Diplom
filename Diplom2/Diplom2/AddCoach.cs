@@ -92,7 +92,6 @@ namespace Diplom2
 
                 }
 
-
             }
         }
         private byte[] ImageToByteArray(Image image)
