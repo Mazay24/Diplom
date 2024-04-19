@@ -89,6 +89,7 @@ namespace Diplom2
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+
                 }
 
 
